@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLux — Туры по Европе 2025</title>
+
+    <meta name="description" content="WanderLux — индивидуальные туры по Европе. Италия, Франция, Испания, Греция, Германия. Лучшие отели, поддержка 24/7, более 12 000 довольных путешественников.">
+    <meta property="og:title" content="WanderLux — Туры по Европе">
+    <meta property="og:description" content="Индивидуальные туры, лучшие отели и незабываемые впечатления.">
+    <meta property="og:image" content="https://i.pinimg.com/736x/84/8f/6c/848f6c83e11bad72e2c9eaea5f2b9a3b.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ffb18a'/%3E%3Ctext x='50' y='68' font-family='Poppins,Arial' font-size='58' font-weight='700' text-anchor='middle' fill='white'%3EW%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== ПРОГРЕСС-БАР СКРОЛЛА ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== БОКОВАЯ ПАНЕЛЬ ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">Wander<span>Lux</span></a>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Закрыть">×</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="sidebar-title">Направления</p>
+            <a href="#italy"><span class="flag">🇮🇹</span> Италия</a>
+            <a href="#france"><span class="flag">🇫🇷</span> Франция</a>
+            <a href="#spain"><span class="flag">🇪🇸</span> Испания</a>
+            <a href="#greece"><span class="flag">🇬🇷</span> Греция</a>
+            <a href="#germany"><span class="flag">🇩🇪</span> Германия</a>
+
+            <p class="sidebar-title">Связь</p>
+            <button type="button" class="sidebar-contact-btn" id="openContact">Связаться</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>📞 +7 (999) 123-45-67</p>
+            <p>✉️ hello@wanderlux.ru</p>
+        </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+    <div class="main-wrapper">
+
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="container header-inner">
+                <button class="burger" id="burger" aria-label="Меню">☰</button>
+                <a href="#" class="logo mobile-logo">Wander<span>Lux</span></a>
+
+                <div class="header-auth">
+                    <button class="favorites-btn" id="openFavorites" aria-label="Избранное">
+                        ♥ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="btn-auth" id="openAuth">Войти</button>
+                    <div class="user-box" id="userBox" style="display:none;">
+                        <span class="user-name" id="userName"></span>
+                        <button class="btn-logout" id="logoutBtn">Выйти</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ГЛАВНЫЙ БАННЕР -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <span class="hero-badge">✈ Туры по Европе 2025</span>
+                    <h1>Откройте <span>Европу</span> вместе с нами</h1>
+                    <p>Индивидуальные туры, лучшие отели и незабываемые впечатления. Ваше путешествие мечты начинается здесь.</p>
+                    <div class="hero-buttons">
+                        <a href="#destinations" class="btn btn-primary">Выбрать тур</a>
+                        <button type="button" class="btn btn-outline" id="openContactHero">Консультация</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.pinimg.com/736x/84/8f/6c/848f6c83e11bad72e2c9eaea5f2b9a3b.jpg" alt="Путешествие">
+                </div>
+            </div>
+        </section>
+
+        <!-- ЦИФРЫ КОМПАНИИ -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat">
+                    <div class="stat-num" data-target="12000">0</div>
+                    <p>Довольных клиентов</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" data-target="56">0</div>
+                    <p>Направлений в Европе</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" data-target="10">0</div>
+                    <p>Лет на рынке</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" data-target="49" data-decimal="1">0</div>
+                    <p>Средний рейтинг</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="features">
+            <div class="container features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h20M12 2v20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/>
+                        </svg>
+                    </div>
+                    <h3>Выгодные цены</h3>
+                    <p>Работаем напрямую с отелями и авиакомпаниями</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Гарантия</h3>
+                    <p>Полная страховка и поддержка 24/7</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Индивидуально</h3>
+                    <p>Составим тур под ваши пожелания</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Поддержка</h3>
+                    <p>Русскоязычный гид в каждой стране</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНЫ -->
+        <section class="destinations" id="destinations">
+            <div class="container">
+                <h2 class="section-title">Направления <span>Европы</span></h2>
+                <p class="section-subtitle">Выберите страну для незабываемого путешествия</p>
+
+                <!-- ИТАЛИЯ -->
+                <div class="country" id="italy">
+                    <div class="country-header">
+                        <h3>🇮🇹 Италия</h3>
+                        <p>Рим, Венеция, Флоренция — страна искусства и романтики</p>
+                    </div>
+                    <div class="tours-grid">
+                        <div class="tour-card" data-city="rome">
+                            <button class="fav-toggle" data-id="rome" aria-label="В избранное">♥</button>
+                            <img src="https://extraguide.ru/images/blog/2021/03-04-8azy54-kolizey.jpg" alt="Рим" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.9</b> <i>(124)</i></div>
+                                <h4>Рим — Вечный город</h4>
+                                <p>7 дней · Колизей, Ватикан, Треви</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 75 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="venice">
+                            <button class="fav-toggle" data-id="venice" aria-label="В избранное">♥</button>
+                            <img src="https://cdn.nur.kz/images/1200x675/652f0f55ffa98337.jpeg" alt="Венеция" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.8</b> <i>(98)</i></div>
+                                <h4>Венеция — город каналов</h4>
+                                <p>5 дней · Гондолы, Сан-Марко, Мурано</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 62 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="florence">
+                            <button class="fav-toggle" data-id="florence" aria-label="В избранное">♥</button>
+                            <img src="https://extraguide.ru/images/pthumb/sp/25655dc413526d975a053da8e120baa13ba3d5c0.0f89f896.jpg" alt="Флоренция" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.9</b> <i>(76)</i></div>
+                                <h4>Флоренция — колыбель Ренессанса</h4>
+                                <p>6 дней · Уффици, Тоскана, вино</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 68 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ФРАНЦИЯ -->
+                <div class="country" id="france">
+                    <div class="country-header">
+                        <h3>🇫🇷 Франция</h3>
+                        <p>Париж, Ницца, Прованс — элегантность и шарм</p>
+                    </div>
+                    <div class="tours-grid">
+                        <div class="tour-card" data-city="paris">
+                            <button class="fav-toggle" data-id="paris">♥</button>
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-c/1280x250/17/15/6d/d6/paris.jpg" alt="Париж" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>5.0</b> <i>(212)</i></div>
+                                <h4>Париж — город любви</h4>
+                                <p>5 дней · Эйфелева башня, Лувр, Монмартр</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 80 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="nice">
+                            <button class="fav-toggle" data-id="nice">♥</button>
+                            <img src="https://static.tildacdn.com/lib/unsplash/2d24d9c3-3ee0-6c15-bcf3-b8378979306f/photo.jpg" alt="Ницца" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.9</b> <i>(143)</i></div>
+                                <h4>Ницца — Лазурный берег</h4>
+                                <p>7 дней · Пляжи, Канны, Монако</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 95 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="provence">
+                            <button class="fav-toggle" data-id="provence">♥</button>
+                            <img src="https://i.pinimg.com/originals/6f/55/d9/6f55d955c1185c4e39f7de3e217aca1f.jpg" alt="Прованс" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.8</b> <i>(87)</i></div>
+                                <h4>Прованс — лавандовые поля</h4>
+                                <p>6 дней · Авиньон, Экс, виноградники</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 72 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ИСПАНИЯ -->
+                <div class="country" id="spain">
+                    <div class="country-header">
+                        <h3>🇪🇸 Испания</h3>
+                        <p>Барселона, Мадрид, Севилья — солнце и страсть</p>
+                    </div>
+                    <div class="tours-grid">
+                        <div class="tour-card" data-city="barcelona">
+                            <button class="fav-toggle" data-id="barcelona">♥</button>
+                            <img src="https://photos.admiral.md/c727a75f67898dd4f57c7dc1e0be8955.jpg" alt="Барселона" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.9</b> <i>(178)</i></div>
+                                <h4>Барселона — Гауди и море</h4>
+                                <p>6 дней · Саграда, Готический квартал</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 70 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="madrid">
+                            <button class="fav-toggle" data-id="madrid">♥</button>
+                            <img src="https://i.pinimg.com/originals/be/3c/36/be3c36d55fc90511170707e44cbbe43f.jpg" alt="Мадрид" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.7</b> <i>(112)</i></div>
+                                <h4>Мадрид — сердце Испании</h4>
+                                <p>5 дней · Прадо, Королевский дворец</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 65 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="seville">
+                            <button class="fav-toggle" data-id="seville">♥</button>
+                            <img src="https://i.pinimg.com/originals/27/96/19/279619951bcfe61edfea499fbd156fe8.jpg" alt="Севилья" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.8</b> <i>(64)</i></div>
+                                <h4>Севилья — андалузская сказка</h4>
+                                <p>5 дней · Алькасар, фламенко, тапас</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 60 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ГРЕЦИЯ -->
+                <div class="country" id="greece">
+                    <div class="country-header">
+                        <h3>🇬🇷 Греция</h3>
+                        <p>Афины, Санторини, Крит — мифы и море</p>
+                    </div>
+                    <div class="tours-grid">
+                        <div class="tour-card" data-city="athens">
+                            <button class="fav-toggle" data-id="athens">♥</button>
+                            <img src="https://img.pac.ru/resorts/213097/247314/big/AEC9BFC07F0001017D432E7C889F2313.jpg" alt="Афины" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.8</b> <i>(95)</i></div>
+                                <h4>Афины — колыбель цивилизации</h4>
+                                <p>4 дня · Акрополь, Парфенон, Плака</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 55 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="santorini">
+                            <button class="fav-toggle" data-id="santorini">♥</button>
+                            <img src="https://i.pinimg.com/originals/b3/93/81/b3938122aaad4a58428d6fb1b6b6647d.jpg" alt="Санторини" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>5.0</b> <i>(306)</i></div>
+                                <h4>Санторини — белый рай</h4>
+                                <p>7 дней · Вулкан, закаты, вино</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 110 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="crete">
+                            <button class="fav-toggle" data-id="crete">♥</button>
+                            <img src="https://resize.tripster.ru/eyMEK-LdKkkH4hpLwg_4SgxBx64=/fit-in/1080x810/filters:no_upscale()/https://cdn.tripster.ru/photos/7248869d-4ccf-415a-9e6a-24ebb01ebf9c.jpg" alt="Крит" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.9</b> <i>(158)</i></div>
+                                <h4>Крит — остров легенд</h4>
+                                <p>8 дней · Кнос, пляжи, ущелье Самарья</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 85 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ГЕРМАНИЯ -->
+                <div class="country" id="germany">
+                    <div class="country-header">
+                        <h3>🇩🇪 Германия</h3>
+                        <p>Берлин, Бавария, Рейн — история и пиво</p>
+                    </div>
+                    <div class="tours-grid">
+                        <div class="tour-card" data-city="berlin">
+                            <button class="fav-toggle" data-id="berlin">♥</button>
+                            <img src="https://i.pinimg.com/originals/86/ff/53/86ff530d9641d495f6b4ce592fe8cb65.jpg" alt="Берлин" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.7</b> <i>(88)</i></div>
+                                <h4>Берлин — город перемен</h4>
+                                <p>4 дня · Бранденбургские ворота, Рейхстаг</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 50 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="bavaria">
+                            <button class="fav-toggle" data-id="bavaria">♥</button>
+                            <img src="https://travelask.ru/system/images/files/001/273/206/wysiwyg/753205_gallery.world1.jpg" alt="Бавария" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.9</b> <i>(126)</i></div>
+                                <h4>Бавария — сказочные замки</h4>
+                                <p>6 дней · Нойшванштайн, Мюнхен, Альпы</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 78 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-card" data-city="cologne">
+                            <button class="fav-toggle" data-id="cologne">♥</button>
+                            <img src="https://u-stena.ru/upload/iblock/835/835dc1a26a092c77848d653a99badb2f.jpg" alt="Кёльн" loading="lazy">
+                            <div class="tour-info">
+                                <div class="tour-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> <b>4.6</b> <i>(72)</i></div>
+                                <h4>Кёльн и Рейн</h4>
+                                <p>5 дней · Собор, круиз по Рейну</p>
+                                <div class="tour-footer">
+                                    <span class="price">от 58 000 ₽</span>
+                                    <button class="btn-book">Забронировать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ОТЗЫВЫ -->
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">Что говорят <span>путешественники</span></h2>
+                <p class="section-subtitle">Более 12 000 клиентов уже отдохнули с WanderLux</p>
+
+                <div class="reviews-grid">
+                    <div class="review">
+                        <div class="review-head">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #ffb18a, #ff9c6e);">АК</div>
+                            <div>
+                                <b>Анна К.</b>
+                                <span>Москва · Италия</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p>«Рим превзошёл все ожидания! Гид Дмитрий — просто клад, показал места, куда туристы обычно не доходят. Обязательно поедем ещё.»</p>
+                    </div>
+
+                    <div class="review">
+                        <div class="review-head">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #a8b98c, #93a477);">МС</div>
+                            <div>
+                                <b>Михаил С.</b>
+                                <span>Санкт-Петербург · Франция</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p>«Свадебное путешествие в Париж — идеально! Отель в двух шагах от Эйфелевой башни, всё продумано до мелочей. Спасибо!»</p>
+                    </div>
+
+                    <div class="review">
+                        <div class="review-head">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #cfe7f5, #a5d0ea);">ЕВ</div>
+                            <div>
+                                <b>Елена В.</b>
+                                <span>Казань · Греция</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p>«Санторини — это сказка. Закаты в Ие, белые домики, синее море. Менеджер подобрал тур за один день, учёл все пожелания.»</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Частые <span>вопросы</span></h2>
+                <p class="section-subtitle">Отвечаем на то, что спрашивают чаще всего</p>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Можно ли оплатить тур частями?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-a"><p>Да, мы работаем с рассрочкой до 6 месяцев без переплаты. Достаточно внести 20% предоплаты, остальное — равными платежами до вылета.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Что если визу не дадут?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-a"><p>Мы возвращаем полную стоимость тура за вычетом консульского сбора. Плюс поможем собрать пакет документов и подготовиться к собеседованию.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Включены ли авиабилеты в стоимость?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-a"><p>В базовую стоимость входят перелёт, отель, трансфер и завтраки. Экскурсии и обеды-ужины можно добавить опционально — это указывается в карточке тура.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Можно ли изменить даты после брони?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-a"><p>Да, не позднее чем за 21 день до вылета — без штрафа. Позже — с удержанием фактически понесённых расходов (обычно 10–30%).</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Есть ли туры для детей?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-a"><p>Конечно! У нас есть семейные туры с детскими клубами, аквапарками и «мягкой» программой. Для детей до 12 лет — скидка 30%.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <div class="container footer-inner">
+                <div>
+                    <a href="#" class="footer-logo">Wander<span>Lux</span></a>
+                    <p class="footer-tag">Путешествия, которые запоминаются</p>
+                </div>
+                <div class="footer-cols">
+                    <div>
+                        <h4>Компания</h4>
+                        <a href="#destinations">Туры</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact" id="footerContact">Связаться</a>
+                    </div>
+                    <div>
+                        <h4>Контакты</h4>
+                        <p>📞 +7 (999) 123-45-67</p>
+                        <p>✉️ hello@wanderlux.ru</p>
+                        <p>📍 Москва, ул. Тверская, 15</p>
+                    </div>
+                </div>
+                <p class="footer-copy">© 2025 WanderLux. Все права защищены.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+    <!-- ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ -->
+    <div class="messengers">
+        <a href="https://wa.me/79991234567" target="_blank" rel="noopener" class="messenger wa" aria-label="WhatsApp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.8-2c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+        </a>
+        <a href="https://t.me/wanderlux" target="_blank" rel="noopener" class="messenger tg" aria-label="Telegram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 3L2 10.5l4.5 1.5L18 6l-9 9v5l3-4 5 3.5L22 3z"/></svg>
+        </a>
+    </div>
+
+    <!-- МОДАЛКА ГОРОДА -->
+    <div class="modal" id="cityModal">
+        <div class="modal-content modal-city">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <p class="modal-country" id="modalCountry"></p>
+                <p id="modalDesc"></p>
+                <h3>Что посмотреть:</h3>
+                <ul id="modalSights"></ul>
+                <div class="modal-footer">
+                    <div>
+                        <p><strong>Длительность:</strong> <span id="modalDays"></span></p>
+                        <p class="modal-price" id="modalPrice"></p>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Заявка отправлена!')">Забронировать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА АВТОРИЗАЦИИ -->
+    <div class="modal" id="authModal">
+        <div class="modal-content modal-auth">
+            <button class="modal-close" id="authClose" aria-label="Закрыть">×</button>
+            <div class="auth-head">
+                <h2>Wander<span>Lux</span></h2>
+                <p>Войдите, чтобы бронировать туры</p>
+            </div>
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" data-tab="login">Вход</button>
+                <button type="button" class="auth-tab" data-tab="register">Регистрация</button>
+            </div>
+            <form class="auth-form is-active" id="loginForm">
+                <label class="auth-field"><span>Email</span><input type="email" id="loginEmail" placeholder="you@example.com" required></label>
+                <label class="auth-field"><span>Пароль</span><input type="password" id="loginPassword" placeholder="••••••" required></label>
+                <p class="auth-error" id="loginError"></p>
+                <button type="submit" class="btn btn-primary btn-block">Войти</button>
+            </form>
+            <form class="auth-form" id="registerForm">
+                <label class="auth-field"><span>Имя</span><input type="text" id="regName" placeholder="Как вас зовут?" required></label>
+                <label class="auth-field"><span>Email</span><input type="email" id="regEmail" placeholder="you@example.com" required></label>
+                <label class="auth-field"><span>Пароль</span><input type="password" id="regPassword" placeholder="Минимум 6 символов" minlength="6" required></label>
+                <label class="auth-field"><span>Повторите пароль</span><input type="password" id="regPassword2" placeholder="Ещё раз" minlength="6" required></label>
+                <p class="auth-error" id="regError"></p>
+                <button type="submit" class="btn btn-primary btn-block">Создать аккаунт</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА СВЯЗИ -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content modal-contact">
+            <button class="modal-close" id="contactClose" aria-label="Закрыть">×</button>
+            <div class="contact-head">
+                <h2>Свяжитесь с нами</h2>
+                <p>Оставьте заявку — подберём тур мечты специально для вас</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="email" placeholder="Email" required>
+                <select>
+                    <option>Выберите страну</option>
+                    <option>Италия</option>
+                    <option>Франция</option>
+                    <option>Испания</option>
+                    <option>Греция</option>
+                    <option>Германия</option>
+                </select>
+                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА ИЗБРАННОГО -->
+    <div class="modal" id="favModal">
+        <div class="modal-content modal-fav">
+            <button class="modal-close" id="favClose" aria-label="Закрыть">×</button>
+            <div class="fav-head">
+                <h2>Избранное</h2>
+                <p>Туры, которые вы сохранили</p>
+            </div>
+            <div class="fav-list" id="favList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
